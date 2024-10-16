@@ -31,12 +31,7 @@ pip install yt-dlp InquirerPy
 ### 3. Instale o FFmpeg
 
 #### **Windows:**
-1. Baixe o FFmpeg em [FFmpeg Downloads](https://ffmpeg.org/download.html).
-2. Extraia o conteúdo do arquivo ZIP.
-3. Adicione o caminho da pasta `bin` do FFmpeg ao `PATH` do seu sistema:
-   - Pesquise por "Variáveis de Ambiente" no menu Iniciar.
-   - Na seção "Variáveis do sistema", selecione "Path" e clique em "Editar".
-   - Adicione o caminho da pasta `bin` do FFmpeg (ex: `C:\ffmpeg\bin`).
+Baixe o FFmpeg em [FFmpeg Downloads](https://ffmpeg.org/download.html).
 
 #### **Linux:**
 ```
