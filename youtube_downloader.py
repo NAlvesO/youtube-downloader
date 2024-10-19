@@ -4,8 +4,12 @@ from InquirerPy import inquirer
 
 def download_video(youtube_url, format_id, output_path):
     ydl_opts = {
-        'format': format_id,
+        'format': f'{format_id}+bestaudio',  # Baixa o vídeo com o melhor áudio
         'outtmpl': f'{output_path}/%(title)s.%(ext)s',
+        'postprocessors': [{
+            'key': 'FFmpegVideoConvertor',  # Mescla áudio e vídeo
+            # 'preferredformat': 'mp4',  # Removido, pois causa erro
+        }],
     }
     
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -43,7 +47,6 @@ def download_and_convert_to_mp3(youtube_url, output_path):
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            # A função extract_info baixa todos os vídeos da playlist se a URL for de uma playlist
             info_dict = ydl.extract_info(youtube_url, download=True)
             print(f"[green]Baixados:[/green] {info_dict['title']}")
     except Exception as e:
